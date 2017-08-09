@@ -4,7 +4,7 @@
 			<%= flash[:lender_errors] %>
 			<%= flash[:borrower_errors] %>
 		</div>
-		<div class="col-md-6 col-sm-8">
+		<div class="col-md-6 col-sm-8 lender">
 			<form action="/online_lending/lender" method="post" class=form-signin>
 				<h2 class="text-center">Lender</h2>
 				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -21,7 +21,7 @@
 		</div>
 		
 
-		<div class="col-md-6 col-sm-8">
+		<div class="col-md-6 col-sm-8 borrower">
 			<form action="/online_lending/borrower" method="post" class="form-signin">
 				<h2 class="text-center">Borrower</h2>
 				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
