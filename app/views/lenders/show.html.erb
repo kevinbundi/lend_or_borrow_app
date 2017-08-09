@@ -1,81 +1,82 @@
-	<div class="container" id="table_lender">
-		<h4>Name: <%= @lender.full_name %></h4>
-		<h4>Account Balance: <%= @total_lender_money %></h4>
 
+<h4>Name: <%= @lender.full_name %></h4>
+<h4>Account Balance: <%= @total_lender_money %></h4>
 
-		<h4>List of people in need of help</h4>
-		<div class="table-responsive">
-			<table class="table table-striped" id="table_color">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Need Money for</th>
-						<th>Reason for Loan</th>
-						<th>Amount Needed</th>
-						<th>Amount Raised</th>
-						<th>Amount to lend</th> 
-						<th>Action</th>
+<div class="table_lender">
+	<h4>List of people in need of help</h4>
+	<div class="table-responsive">
+		<table class="table table-striped" id="table_color">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Need Money for</th>
+					<th>Reason for Loan</th>
+					<th>Amount Needed</th>
+					<th>Amount Raised</th>
+					<th>Amount to lend</th> 
+					<th>Action</th>
 
-					</tr>
-				</thead>
-				<tbody>
-					<% @borrowers.each do |borrower| %>
-					
-						<% if !History.find_by(lender: @lender, borrower: borrower.id) %>
-					<tr>
-							<td><%= borrower.full_name %></td>
-							<td><%= borrower.purpose %></td>
-							<td><%= borrower.description %></td>
-							<td><%= borrower.money %></td>
-							<td><%= borrower.raised %></td>
-							<td>
-								   <form action="/lender/<%= borrower.id %>" method="post">
-									<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-									<div class="">
-										<input type="number" name="lent" value="25" class="form-control">
-									</div>
-							</td>
-							<td>
-									<div class="">
-										<input type="submit" value="Lend">
-									</div>
-								</form>
-							</td>
-						<% end %>
-					</tr>
+				</tr>
+			</thead>
+			<tbody>
+				<% @borrowers.each do |borrower| %>
+				
+					<% if !History.find_by(lender: @lender, borrower: borrower.id) %>
+				<tr>
+						<td><%= borrower.full_name %></td>
+						<td><%= borrower.purpose %></td>
+						<td><%= borrower.description %></td>
+						<td><%= borrower.money %></td>
+						<td><%= borrower.raised %></td>
+						<td>
+							   <form action="/lender/<%= borrower.id %>" method="post">
+								<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+								<div class="">
+									<input type="number" name="lent" value="25" class="form-control">
+								</div>
+						</td>
+						<td>
+								<div class="">
+									<input type="submit" value="Lend">
+								</div>
+							</form>
+						</td>
 					<% end %>
-				</tbody>
-			</table>
-		</div>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
-	<div class="container" id="table_lender">
-		<h4>List of people you lend money to:</h4>
-		<div class="table-responsive">
-			<table class="table table-striped" id="table_color">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Need Money for</th>
-						<th>Reason for Loan</th>
-						<th>Amount Needed</th>
-						<th>Amount Raised</th>
-						<th>Amount Lent</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @lendees.each do |lendee| %>
-					<tr>
-						<td><%= lendee.full_name %></td>
-						<td><%= lendee.purpose %></td>
-						<td><%= lendee.description %></td>
-						<td><%= lendee.money %></td>
-						<td><%= lendee.raised %></td>
-						<td><%= History.find_by(lender:@lender, borrower:lendee.id).amount %></td>
-					</tr>
-					<% end %>
-				</tbody>
-			</table>
-		</div>
+</div>
+	
+<div class="table_lender">
+	<h4>List of people you lend money to:</h4>
+	<div class="table-responsive">
+		<table class="table table-striped" id="table_color">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Need Money for</th>
+					<th>Reason for Loan</th>
+					<th>Amount Needed</th>
+					<th>Amount Raised</th>
+					<th>Amount Lent</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @lendees.each do |lendee| %>
+				<tr>
+					<td><%= lendee.full_name %></td>
+					<td><%= lendee.purpose %></td>
+					<td><%= lendee.description %></td>
+					<td><%= lendee.money %></td>
+					<td><%= lendee.raised %></td>
+					<td><%= History.find_by(lender:@lender, borrower:lendee.id).amount %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
+</div>
 
 

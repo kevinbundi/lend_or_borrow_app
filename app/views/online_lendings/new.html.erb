@@ -1,42 +1,42 @@
-<div class="container">	
-	<div class="registration">
-		<div id="lender_error">
-			<%= flash[:lender_errors] %>
-			<%= flash[:borrower_errors] %>
-		</div>
-		<div class="col-md-6 col-sm-8 lender">
-			<form action="/online_lending/lender" method="post" class=form-signin>
-				<h2 class="text-center">Lender</h2>
-				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-				<input type="text" name="lender[first_name]" placeholder="First Name" class="form-control my_margin_bottom">
-				<input type="text" name="lender[last_name]" placeholder="Last Name" class="form-control my_margin_bottom" required>
-				<input type="email" name="lender[email]" placeholder="Email" id="inputEmail" class="form-control my_margin_bottom" required>
-				<input type="password" name="lender[password]" placeholder="Password" id="inputPassword" class="form-control my_margin_bottom" required>
-				<div class="form-group">
-					<input type="number" name="lender[money]" placeholder="Money" class="form-control" required>
-				</div>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button><br>
-				<p><a href="/online_lending/login" class="my_white">Already a Member?</a></p><br>
-			</form>
-		</div>
-		
 
-		<div class="col-md-6 col-sm-8 borrower">
-			<form action="/online_lending/borrower" method="post" class="form-signin">
-				<h2 class="text-center">Borrower</h2>
-				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-				<input type="text" name="borrower[first_name]" placeholder="First Name" class="form-control my_margin_bottom" required>
-				<input type="text" name="borrower[last_name]" placeholder="Last Name" class="form-control my_margin_bottom" required>
-				<input type="email" name="borrower[email]" placeholder="Email" id="inputEmail" class="form-control my_margin_bottom" required>
-				<input type="password" name="borrower[password]" placeholder="Password" id="inputPassword" class="form-control my_margin_bottom" required>
-				<input type="text" name="borrower[purpose]" placeholder="need for money" class="form-control my_margin_bottom" required>
-				<textarea name="borrower[description]" placeholder="Description" class="form-control my_margin_bottom" required></textarea>
-				<div class="form-group">
-					<input type="number" name="borrower[money]" placeholder="Amount Needed" class="form-control" required>
-				</div>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button><br>
-				<!-- <input type="submit" value="Register"> -->
-				<p class="my_white"><a href="/online_lending/login" class="my_white">Already a Member?</a></p>
-			</form>
-		</div>
-</div>
+<div class="registration">
+	<div id="lender_error">
+		<%= flash[:lender_errors] %>
+		<%= flash[:borrower_errors] %>
+	</div>
+	<div class="col-md-6 col-sm-8 lender">
+		<form action="/online_lending/lender" method="post" class=form-signin>
+			<h2 class="text-center">Lender</h2>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="text" name="lender[first_name]" placeholder="First Name" class="form-control my_margin_bottom">
+			<input type="text" name="lender[last_name]" placeholder="Last Name" class="form-control my_margin_bottom" required>
+			<input type="email" name="lender[email]" placeholder="Email" id="inputEmail" class="form-control my_margin_bottom" required>
+			<input type="password" name="lender[password]" placeholder="Password" id="inputPassword" class="form-control my_margin_bottom" required>
+			<div class="form-group">
+				<input type="number" name="lender[money]" placeholder="Money" class="form-control" required>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button><br>
+			<p><a href="/online_lending/login" class="my_white">Already a Member?</a></p><br>
+		</form>
+	</div>
+	
+
+	<div class="col-md-6 col-sm-8 borrower">
+		<form action="/online_lending/borrower" method="post" class="form-signin">
+			<h2 class="text-center">Borrower</h2>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="text" name="borrower[first_name]" placeholder="First Name" class="form-control my_margin_bottom" required>
+			<input type="text" name="borrower[last_name]" placeholder="Last Name" class="form-control my_margin_bottom" required>
+			<input type="email" name="borrower[email]" placeholder="Email" id="inputEmail" class="form-control my_margin_bottom" required>
+			<input type="password" name="borrower[password]" placeholder="Password" id="inputPassword" class="form-control my_margin_bottom" required>
+			<input type="text" name="borrower[purpose]" placeholder="need for money" class="form-control my_margin_bottom" required>
+			<textarea name="borrower[description]" placeholder="Description" class="form-control my_margin_bottom" required></textarea>
+			<div class="form-group">
+				<input type="number" name="borrower[money]" placeholder="Amount Needed" class="form-control" required>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button><br>
+			<!-- <input type="submit" value="Register"> -->
+			<p class="my_white"><a href="/online_lending/login" class="my_white">Already a Member?</a></p>
+		</form>
+	</div>
+</div>	
