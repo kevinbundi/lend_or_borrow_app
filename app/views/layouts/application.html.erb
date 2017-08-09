@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>OnlineLending2</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -22,7 +22,9 @@
 				<form action="/online_lending/lender" method="post">
 					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 					<input type="hidden" name="_method" value="delete" >
-					<input type="submit" value="logout" class="btn btn-outline-success" id="my_logout">
+					<div class="my_logout">
+						<input type="submit" value="logout" class="btn btn-outline-success pull-right">
+					</div>
 				</form>
 			</div>
 		<% end %>
@@ -32,7 +34,7 @@
 				<form action="/online_lending/borrower" method="post" class="form-inline pull-xs-right">
 					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 					<input type="hidden" name="_method" value="delete">
-					<input type="submit" value="logout" class="btn btn-outline-success" id="my_logout">
+					<input type="submit" value="logout" class="btn btn-outline-success pull-right" class="my_logout">
 				</form>
 			</div>
 		<% end %>

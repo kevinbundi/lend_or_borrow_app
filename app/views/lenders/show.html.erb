@@ -13,7 +13,8 @@
 						<th>Reason for Loan</th>
 						<th>Amount Needed</th>
 						<th>Amount Raised</th>
-						<th>Amount to lend Action</th>
+						<th>Amount to lend</th> 
+						<th>Action</th>
 
 					</tr>
 				</thead>
@@ -30,8 +31,14 @@
 							<td>
 								   <form action="/lender/<%= borrower.id %>" method="post">
 									<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-									<input type="number" name="lent" value="25" id="amount">
-									<input type="submit" value="Lend">
+									<div class="">
+										<input type="number" name="lent" value="25" class="form-control">
+									</div>
+							</td>
+							<td>
+									<div class="">
+										<input type="submit" value="Lend">
+									</div>
 								</form>
 							</td>
 						<% end %>
