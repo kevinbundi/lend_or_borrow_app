@@ -1,0 +1,20 @@
+// Place all the styles related to the Lenders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#table_lender {
+
+  max-width: 750px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#amount {
+	width: 60px;
+	margin: 0px;
+}
+
+.number input[type="number"] {
+  max-width: 10px;
+}
+

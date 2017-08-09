@@ -1,0 +1,27 @@
+<div class="container" id="table">
+	<h4>Borrower: <%= @borrower.full_name %></h4>
+	<h4>Amount Need: <%= @borrower.money %></h4>
+	<h4>Amount Raised: <%= @borrower.raised %> </h4>
+
+	<h5>List of people who lent you money</h5>
+	<div class="table-responsive">
+		<table class="table table-striped" id="table_color">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Amount Lent</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @my_lenders.each do |my_lender| %>
+					<tr>
+						<td><%= Lender.find(my_lender.lender_id).full_name %></td>
+						<td><%= Lender.find(my_lender.lender_id).email %></td>
+						<td><%= my_lender.amount %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

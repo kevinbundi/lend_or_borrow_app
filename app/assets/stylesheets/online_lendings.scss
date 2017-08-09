@@ -1,0 +1,42 @@
+// Place all the styles related to the OnlineLendings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ html, #boxy {
+	background: image-url('background.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+div#lender{
+	width: 336px; height: 300px;
+	margin: 80px 0px 0px 310px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+div#borrower{
+	width: 336px; height: 300px;
+	margin: 80px 0px 0px 34px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+	input, textarea{
+		margin-bottom: 2px;
+	}
+.form-control input[type="number"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+	
