@@ -54,4 +54,7 @@ gem 'hirb'
 # gem 'activerecord'
 
 gem 'custom_error_message'
-    
+
+gem 'rails_12factor', group: :production
+  
+ruby '2.2.4'  
